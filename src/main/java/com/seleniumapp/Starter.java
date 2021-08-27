@@ -20,6 +20,7 @@ public class Starter {
 
         AmazonBookSearch amazonBookSearch = new AmazonBookSearch(driver);
 
+        amazonBookSearch.selectDepartmentFromDropdownDepartmentsBox("Books");
         amazonBookSearch.typeSearchQueryInSearchBar("Java");
         amazonBookSearch.submitSearchQuery();
 
