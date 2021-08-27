@@ -8,14 +8,20 @@ public class Starter {
         System.setProperty("webdriver.chrome.driver", "/WebDriver/bin/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
-        GoogleSearchPage googleSearchPage = new GoogleSearchPage(driver);
+//        GoogleSearchPage googleSearchPage = new GoogleSearchPage(driver);
+//
+//        googleSearchPage.typeSearchQuery("Java");
+//        googleSearchPage.submitSearchQuery();
+//
+//        GoogleSearchPage anotherGoogleSearchPage = new GoogleSearchPage(driver);
+//
+//        anotherGoogleSearchPage.typeSearchQueryAndSubmit("Java");
 
-        googleSearchPage.typeSearchQuery("Java");
-        googleSearchPage.submitSearchQuery();
 
-        GoogleSearchPage anotherGoogleSearchPage = new GoogleSearchPage(driver);
+        AmazonBookSearch amazonBookSearch = new AmazonBookSearch(driver);
 
-        anotherGoogleSearchPage.typeSearchQueryAndSubmit("Java");
+        amazonBookSearch.typeSearchQueryInSearchBar("Java");
+        amazonBookSearch.submitSearchQuery();
 
     }
 }
