@@ -26,11 +26,9 @@ public class Starter {
         amazonBookSearch.selectDepartmentFromDropdownDepartmentsBox("Books");
         amazonBookSearch.typeSearchQueryInSearchBar("Java");
         amazonBookSearch.submitSearchQuery();
-        amazonBookSearch.getBooksFromSearchPage().stream()
+        amazonBookSearch.getBooksFromSearchPage()
                 .forEach(System.out::println);
 
-//        List<WebElement> list = amazonBookSearch.createElementList();
-//        list.stream().
-
+        amazonBookSearch.close();
     }
 }
