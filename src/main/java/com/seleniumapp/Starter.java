@@ -1,7 +1,10 @@
 package com.seleniumapp;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.List;
 
 public class Starter {
     public static void main(String[] args) {
@@ -23,6 +26,11 @@ public class Starter {
         amazonBookSearch.selectDepartmentFromDropdownDepartmentsBox("Books");
         amazonBookSearch.typeSearchQueryInSearchBar("Java");
         amazonBookSearch.submitSearchQuery();
+        amazonBookSearch.getBooksFromSearchPage().stream()
+                .forEach(System.out::println);
+
+//        List<WebElement> list = amazonBookSearch.createElementList();
+//        list.stream().
 
     }
 }
