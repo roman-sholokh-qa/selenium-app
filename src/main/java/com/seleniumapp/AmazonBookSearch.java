@@ -67,13 +67,13 @@ public class AmazonBookSearch {
                         .map(s -> s.replaceFirst("by", ""))
                         .map(s -> s.trim())
                         .collect(Collectors.joining()));
-            } catch (Exception e) {
+            } catch (NoSuchElementException e) {
                 book.setAuthor("no author found");
             }
 
             try {
                 book.setPrice(webDriver.findElement(By.xpath(String.format(priceXpath, i))).getAttribute("outerText"));
-            } catch (Exception e) {
+            } catch (NoSuchElementException e) {
                 book.setPrice("no price found");
             }
 
